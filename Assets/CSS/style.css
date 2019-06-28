@@ -25,6 +25,7 @@ body {
     margin: auto;
     height: 200px;
     padding-top: 200px;
+    padding-bottom: 25px;
 }
 
 .p1 {
@@ -78,9 +79,28 @@ div.box {
     color: white;
     border-color: white;
     background-image: url(https://images.unsplash.com/photo-1509807995916-c332365e2d9e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1271&q=80);
+    margin: 10px; 
 }
 
 .button-submit:hover {
     box-shadow: 0 6px 12px 0 grey, 0 3px 10px 0 grey;
     color: yellow;
+}
+
+
+.spinner {
+    animation-name: spinner;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+  animation-duration: 3s;
+  transform-style: preserve-3d;
+  text-align:center;
+}
+@keyframes spinner {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(-360deg);
+  }
 }

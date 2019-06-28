@@ -4,7 +4,7 @@ $(document).ready(function() {
         $("#display-bars").hide();
 
         $("#submit").on("click", function() {
-            let search = $("#search").val().trim();
+            let search = $("#inlineFormInputName2").val().trim();
             let queryUrl = "https://cors-anywhere.herokuapp.com/" + "https://maps.googleapis.com/maps/api/place/textsearch/json?query=bars+" + search + "&key=AIzaSyDGbaz8xBuD2ZAX5SI_IlQ8zYeao7KwTPQ";
             $.ajax({
                 url: queryUrl,
@@ -55,10 +55,25 @@ $(document).ready(function() {
         });
     }
 
-    function initMap() {
+ //   function initMap() {
 
-    }
+ //   }
     displayPub();
 
     $(document).on("click", ".bars", barInfo);
 });
+
+// mapquest 
+
+window.onload = function() {
+    L.mapquest.key = 'zZgb6vyDvHeuxndNBfVRbExncymi03nQ';
+    
+
+    var map = L.mapquest.map('map', {
+      center: [location],
+      layers: L.mapquest.tileLayer('map'),
+      zoom: 12
+    });
+
+    map.addControl(L.mapquest.control());
+  }
