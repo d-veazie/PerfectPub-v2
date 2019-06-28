@@ -14,7 +14,7 @@ $(document).ready(function() {
                 let result = data.results;
                 for (let i = 0; i < result.length; i++) {
                     barDiv = $("<div>");
-                    barDiv.addClass("bars d-flex flex-column border border-white align-items-center ml-3");
+                    barDiv.addClass("bars d-flex flex-column border border-white align-items-center mt-3");
                     barDiv.attr("value", result[i].place_id);
                     bName = $("<h4>");
                     bName.text(result[i].name);

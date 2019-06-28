@@ -53,10 +53,9 @@ body {
     text-shadow: 2px 2px 6px white;
 }
 
-
-/* div.container {
+div.container {
     width: 100%;
-} */
+}
 
 div.box {
     box-sizing: border-box;
@@ -92,7 +91,15 @@ div.box {
 }
 
 .bars {
-    width: 420px;
+    width: 400px;
     background-color: black;
     opacity: .7;
+}
+
+img {
+    opacity: 1;
+}
+
+h4 {
+    opacity: 1;
 }
