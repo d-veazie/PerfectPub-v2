@@ -21,7 +21,7 @@ body {
     margin-bottom: 80px;
 }
 
-.container {
+.form-container {
     margin: auto;
     height: 200px;
     padding-top: 200px;
@@ -53,9 +53,10 @@ body {
     text-shadow: 2px 2px 6px white;
 }
 
-div.container {
+
+/* div.container {
     width: 100%;
-}
+} */
 
 div.box {
     box-sizing: border-box;
@@ -83,4 +84,15 @@ div.box {
 .button-submit:hover {
     box-shadow: 0 6px 12px 0 grey, 0 3px 10px 0 grey;
     color: yellow;
+}
+
+#display-bars {
+    color: white;
+    font-weight: bolder;
+}
+
+.bars {
+    width: 420px;
+    background-color: black;
+    opacity: .7;
 }
