@@ -11,8 +11,6 @@
   <link href="https://fonts.googleapis.com/css?family=Diplomata|IM+Fell+Great+Primer+SC|Sancreek&display=swap" rel="stylesheet">
   <!--CSS-->
   <link rel="stylesheet" href="Assets/CSS/style.css">
-  <!--JAVASCRIPT-->
-  <script src="Assets/JS/pub.js"></script>
   <!--Bootstrap-->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -25,7 +23,10 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
-
+    <!--Jquerey-->
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -42,25 +43,15 @@
 
   <div class="container">
 
-      <form class="form-inline">
-          <label class="sr-only" for="inlineFormInputName2">Name</label>
-          <input type="text" class="form-control-input" id="inlineFormInputName2" placeholder="Search by City:">
-        
-        
-        
-          <div class="form-check mb-2 mr-sm-2">
-            <input class="form-check-input" type="checkbox" id="inlineFormCheck">
-          </div>
-        
-          <button type="submit" id="submit" class="button-submit">Submit</button>
-        </form>
+    <input id="search" placeholder ="Search by State, City, or Zip Code:"> 
+    <button id="submit" class="submit-button">Submit</button>
+    <div class="container w-50 d-flex flex">
+        <div id="display-bars" class="d-flex flex-wrap align-items-center border border-dark"></div>
+    </div>
 
 
-
-  </div>
-
-
-
+<!--JAVASCRIPT-->
+<script src="Assets/JS/pub.js"></script>
 
 </body>
 

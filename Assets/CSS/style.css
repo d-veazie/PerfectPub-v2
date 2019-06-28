@@ -47,7 +47,6 @@ body {
 }   
 div.container {
     width: 100%;
-    
   }
 div.box {
     box-sizing: border-box;
@@ -55,14 +54,15 @@ div.box {
     border: 5px solid red;
     float: left;
 }  
-.form-control-input {
+#search {
     width: 1000px;
     height: 40px;
     border-radius: 8px;
     padding: 10px;
 }
-.button-submit {
+.submit-button {
     font-family: 'IM Fell Great Primer SC', serif;
+    padding-left: 10px;
     padding: 10px 10px 10px 10px;
     border-radius: 12px;
     color: white;
@@ -70,7 +70,7 @@ div.box {
     background-image: url(https://images.unsplash.com/photo-1509807995916-c332365e2d9e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1271&q=80); 
 }
 
-.button-submit:hover {
+#submit:hover {
     box-shadow: 0 6px 12px 0 grey, 0 3px 10px 0 grey;
     color: yellow;
 }
