@@ -12,7 +12,11 @@ $(document).ready(function() {
                 method: 'GET'
             }).then(function(data) {
                 console.log(queryUrl);
-                showResult(data.results);
+                if (search === undefined) {
+                    console.log("search again");
+                } else {
+                    showResult(data.results);
+                }
 
             });
         });
@@ -78,24 +82,24 @@ $(document).ready(function() {
             barHours.text(results.opening_hours.weekday_text[i]);
             hoursDiv.append(barHours);
         }
-        detailDiv.append(barName, barRating, barAddress, barPhone, barWebsite, hoursDiv);
-        $("#display-bars").prepend(detailDiv);
+        detailDiv.append(barName, barRating, barPrice, barAddress, barPhone, barWebsite, hoursDiv);
+        $("#display-details").prepend(detailDiv);
     }
 
     function displayImages(results) {
         let actDiv = $("<div>");
         actDiv.addClass("carousel-item active");
         let activeImage = $("<img>");
-        activeImage.addClass("d-block w-300");
-        activeImage.attr("src", "https://maps.googleapis.com/maps/api/place/photo?maxwidth=700&maxheight=300&photoreference=" + results.photos[5].photo_reference + "&key=AIzaSyDGbaz8xBuD2ZAX5SI_IlQ8zYeao7KwTPQ");
+        activeImage.addClass("d-block");
+        activeImage.attr("src", "https://maps.googleapis.com/maps/api/place/photo?maxwidth=600&maxheight=300&photoreference=" + results.photos[5].photo_reference + "&key=AIzaSyDGbaz8xBuD2ZAX5SI_IlQ8zYeao7KwTPQ");
         actDiv.append(activeImage);
         $(".image").prepend(actDiv);
         for (let i = 0; i < results.photos.length; i++) {
             imgDiv = $("<div>");
             imgDiv.addClass("carousel-item");
             let barImage = $("<img>");
-            barImage.addClass("d-block w-300")
-            barImage.attr("src", "https://maps.googleapis.com/maps/api/place/photo?maxwidth=700&maxheight=300&photoreference=" + results.photos[i].photo_reference + "&key=AIzaSyDGbaz8xBuD2ZAX5SI_IlQ8zYeao7KwTPQ");
+            barImage.addClass("d-block");
+            barImage.attr("src", "https://maps.googleapis.com/maps/api/place/photo?maxwidth=600&maxheight=300&photoreference=" + results.photos[i].photo_reference + "&key=AIzaSyDGbaz8xBuD2ZAX5SI_IlQ8zYeao7KwTPQ");
             imgDiv.append(barImage);
             $(".image").append(imgDiv);
 
@@ -109,18 +113,17 @@ $(document).ready(function() {
         let lng = results.geometry.location.lng;
         let title = results.name;
         var bar = { lat: lat, lng: lng };
-        // The map, centered at Uluru
         var map = new google.maps.Map(
             document.getElementById('map'), { zoom: 15, center: bar });
-        // The marker, positioned at Uluru
         var marker = new google.maps.Marker({ position: bar, map: map, title: title });
 
     }
 
     function displayReviews(results) {
-        let revDiv = $("<div>");
-        revDiv.addClass("reviews text-white d-flex flex-wrap");
+
         for (let i = 0; i < results.reviews.length; i++) {
+            let revDiv = $("<div>");
+            revDiv.addClass("reviews text-white d-flex flex-wrap");
             let list = $("<ul>")
             list.addClass("review-list border border-white list-group")
             let rName = $("<li>");
@@ -131,17 +134,17 @@ $(document).ready(function() {
             rating.addClass("list-item");
             rating.text("Rating: " + results.reviews[i].rating);
             list.append(rating);
-            let time = $("<li>");
-            time.addClass("list-item");
-            time.text(results.reviews[i].relative_time_description);
-            list.append(time);
             let review = $("<li>");
             review.addClass("list-item");
             review.text(results.reviews[i].text);
             list.append(review);
+            let time = $("<li>");
+            time.addClass("list-item");
+            time.text(results.reviews[i].relative_time_description);
+            list.append(time);
             revDiv.append(list);
+            $("#display-reviews").prepend(revDiv);
         }
-        $("#display-reviews").prepend(revDiv);
     }
 
     displayPub();

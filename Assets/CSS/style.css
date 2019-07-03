@@ -73,6 +73,7 @@ div.box {
     border-radius: 8px;
     padding: 10px;
     margin-left: 65px;
+    box-shadow: 0px 0px 2px 2px black;
 }
 
 .button-submit {
@@ -159,15 +160,86 @@ h1 {
     border: 1px solid black!important;
 }
 
-.review-list {
+.container {
     background-color: black;
-    width: 900px;
+    margin-bottom: 10px;
 }
 
 #map {
-    height: 200px;
+    height: 275px;
     /* The height is 400 pixels */
     width: 600px;
     background-color: grey;
     /* The width is the width of the web page */
+    margin: auto;
+    margin-left: 20px;
+    border-style: solid white;
+    border: groove black 9px;
+}
+
+.reviews {
+    background-color: black;
+    width: 1000px;
+    border: white;
+    margin: auto;
+    margin-bottom: 20px;
+    margin-bottom: 15px;
+}
+
+.list-item {
+    padding: 8px;
+    list-style: none;
+}
+
+#list-item-main {
+    text-decoration: underline white;
+    font-size: 18px;
+    color: white;
+    /* background-image: url(https://images.unsplash.com/photo-1492892132812-a00a8b245c45?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80);  */
+}
+
+#list-item-time {
+    font-size: 12px;
+    padding-left: 0px;
+    text-decoration: overline white;
+}
+
+#list-item-rating {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.d-block {
+    width: 300px;
+    height: 300px;
+    margin-left: 40px;
+}
+
+#active-image {
+    position: absolute;
+    margin-bottom: 20px;
+}
+
+.picture-div {
+    background-color: black;
+    padding: 20px;
+    width: 600px;
+    height: 507px;
+    border-radius: 8px;
+    border-style: solid white;
+    margin-left: 15px;
+}
+
+.d-block {
+    margin-left: 150px;
+    height: 300px;
+    width: 300px;
+    margin-bottom: 15px;
+    box-shadow: 0px 0px 4px 4px white;
+    margin-top: 5px;
+}
+
+.review-list {
+    margin-bottom: 20px;
+    border-style: solid white;
 }
