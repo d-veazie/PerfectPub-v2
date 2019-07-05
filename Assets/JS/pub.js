@@ -1,4 +1,8 @@
+
 $(document).ready(function () {
+
+$(document).ready(function() {
+
     $("#map").hide();
 
     function displayPub() {
@@ -79,11 +83,16 @@ $(document).ready(function () {
             hoursDiv.append(barHours);
         }
         detailDiv.append(barName, barRating, barAddress, barPhone, barWebsite, hoursDiv);
+
         $("#display-details").prepend(detailDiv);
+
+        $("#display-bars").prepend(detailDiv);
+
     }
 
     function displayImages(results) {
         let actDiv = $("<div>");
+
         actDiv.attr('id', 'picture-div')
         actDiv.addClass("carousel-item active");
         let activeImage = $("<img>");
@@ -91,6 +100,12 @@ $(document).ready(function () {
         activeImage.attr('id', 'active-image')
         activeImage.addClass("d-block w-300");
         activeImage.attr("src", "https://maps.googleapis.com/maps/api/place/photo?maxwidth=700&maxheight=400&photoreference=" + results.photos[5].photo_reference + "&key=AIzaSyDGbaz8xBuD2ZAX5SI_IlQ8zYeao7KwTPQ");
+
+        actDiv.addClass("carousel-item active");
+        let activeImage = $("<img>");
+        activeImage.addClass("d-block w-300");
+        activeImage.attr("src", "https://maps.googleapis.com/maps/api/place/photo?maxwidth=700&maxheight=300&photoreference=" + results.photos[5].photo_reference + "&key=AIzaSyDGbaz8xBuD2ZAX5SI_IlQ8zYeao7KwTPQ");
+
         actDiv.append(activeImage);
         $(".image").prepend(actDiv);
         for (let i = 0; i < results.photos.length; i++) {
@@ -98,7 +113,11 @@ $(document).ready(function () {
             imgDiv.addClass("carousel-item");
             let barImage = $("<img>");
             barImage.addClass("d-block w-300")
+
             barImage.attr("src", "https://maps.googleapis.com/maps/api/place/photo?maxwidth=700&maxheight=400&photoreference=" + results.photos[i].photo_reference + "&key=AIzaSyDGbaz8xBuD2ZAX5SI_IlQ8zYeao7KwTPQ");
+
+            barImage.attr("src", "https://maps.googleapis.com/maps/api/place/photo?maxwidth=700&maxheight=300&photoreference=" + results.photos[i].photo_reference + "&key=AIzaSyDGbaz8xBuD2ZAX5SI_IlQ8zYeao7KwTPQ");
+
             imgDiv.append(barImage);
             $(".image").append(imgDiv);
 
@@ -110,6 +129,7 @@ $(document).ready(function () {
         $("#map").show();
         let lat = results.geometry.location.lat;
         let lng = results.geometry.location.lng;
+
         var uluru = { lat: lat, lng: lng };
         // The map, centered at Uluru
         var map = new google.maps.Map(
@@ -117,9 +137,19 @@ $(document).ready(function () {
         // The marker, positioned at Uluru
         var marker = new google.maps.Marker({ position: uluru, map: map });
 
+        let title = results.name;
+        var bar = { lat: lat, lng: lng };
+        // The map, centered at Uluru
+        var map = new google.maps.Map(
+            document.getElementById('map'), { zoom: 15, center: bar });
+        // The marker, positioned at Uluru
+        var marker = new google.maps.Marker({ position: bar, map: map, title: title });
+
+
     }
 
     function displayReviews(results) {
+
         for (let i = 0; i < results.reviews.length; i++) {
             let revDiv = $("<div>");
             revDiv.addClass("reviews text-white border border-white d-flex flex-wrap");
@@ -128,13 +158,23 @@ $(document).ready(function () {
             let rName = $("<li>");
             //below
             rName.attr("id", 'list-item-main')
+
+        let revDiv = $("<div>");
+        revDiv.addClass("reviews text-white d-flex flex-wrap");
+        for (let i = 0; i < results.reviews.length; i++) {
+            let list = $("<ul>")
+            list.addClass("review-list border border-white list-group")
+            let rName = $("<li>");
+
             rName.addClass("list-item");
             rName.text(results.reviews[i].author_name);
             list.append(rName);
             let rating = $("<li>");
             rating.addClass("list-item");
             rating.text("Rating: " + results.reviews[i].rating);
+
             rating.attr('id', 'list-item-rating');
+
             list.append(rating);
             let time = $("<li>");
             time.addClass("list-item");
@@ -155,6 +195,15 @@ $(document).ready(function () {
             $("#display-reviews").prepend(revDiv);
         }
         
+
+            let review = $("<li>");
+            review.addClass("list-item");
+            review.text(results.reviews[i].text);
+            list.append(review);
+            revDiv.append(list);
+        }
+        $("#display-reviews").prepend(revDiv);
+
     }
 
     displayPub();
