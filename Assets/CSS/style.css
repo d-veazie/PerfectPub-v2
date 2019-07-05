@@ -153,6 +153,7 @@ h1 {
     width: 600px;
     border-radius: 8px;
     border-style: solid;
+    margin-bottom: 20px;
 }
 
 .hours {
@@ -172,15 +173,16 @@ h1 {
     background-color: grey;
     /* The width is the width of the web page */
     margin: auto;
-    margin-left: 20px;
+    margin-left: 50px;
     border-style: solid white;
     border: groove black 9px;
 }
 
 .reviews {
     background-color: black;
+    border: 3px solid white;
+    border-radius: 8px;
     width: 1000px;
-    border: white;
     margin: auto;
     margin-bottom: 20px;
     margin-bottom: 15px;
@@ -191,28 +193,25 @@ h1 {
     list-style: none;
 }
 
-#list-item-main {
+.name-list-item {
     text-decoration: underline white;
     font-size: 18px;
     color: white;
+    padding: 8px;
     /* background-image: url(https://images.unsplash.com/photo-1492892132812-a00a8b245c45?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80);  */
 }
 
-#list-item-time {
+.time-list-item {
     font-size: 12px;
     padding-left: 0px;
+    padding: 8px;
     text-decoration: overline white;
 }
 
-#list-item-rating {
+.review-list-item {
     font-size: 14px;
+    padding: 8px;
     margin-bottom: 10px;
-}
-
-.d-block {
-    width: 300px;
-    height: 300px;
-    margin-left: 40px;
 }
 
 #active-image {
@@ -232,14 +231,13 @@ h1 {
 
 .d-block {
     margin-left: 150px;
-    height: 300px;
-    width: 300px;
+    width: 400px;
+    height: 250px;
     margin-bottom: 15px;
     box-shadow: 0px 0px 4px 4px white;
-    margin-top: 5px;
 }
 
 .review-list {
     margin-bottom: 20px;
-    border-style: solid white;
+    list-style: none;
 }

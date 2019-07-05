@@ -82,7 +82,9 @@ $(document).ready(function() {
             barHours.text(results.opening_hours.weekday_text[i]);
             hoursDiv.append(barHours);
         }
-        detailDiv.append(barName, barRating, barPrice, barAddress, barPhone, barWebsite, hoursDiv);
+        let b = $("<button>" + "Back" + "</button>");
+        b.addClass("btn btn-dark back-bars")
+        detailDiv.append(barName, barRating, barPrice, barAddress, barPhone, barWebsite, hoursDiv, b);
         $("#display-details").prepend(detailDiv);
     }
 
@@ -91,7 +93,7 @@ $(document).ready(function() {
         actDiv.addClass("carousel-item active");
         let activeImage = $("<img>");
         activeImage.addClass("d-block");
-        activeImage.attr("src", "https://maps.googleapis.com/maps/api/place/photo?maxwidth=600&maxheight=300&photoreference=" + results.photos[5].photo_reference + "&key=AIzaSyDGbaz8xBuD2ZAX5SI_IlQ8zYeao7KwTPQ");
+        activeImage.attr("src", "https://maps.googleapis.com/maps/api/place/photo?maxwidth=600&maxheight=250&photoreference=" + results.photos[5].photo_reference + "&key=AIzaSyDGbaz8xBuD2ZAX5SI_IlQ8zYeao7KwTPQ");
         actDiv.append(activeImage);
         $(".image").prepend(actDiv);
         for (let i = 0; i < results.photos.length; i++) {
@@ -99,7 +101,7 @@ $(document).ready(function() {
             imgDiv.addClass("carousel-item");
             let barImage = $("<img>");
             barImage.addClass("d-block");
-            barImage.attr("src", "https://maps.googleapis.com/maps/api/place/photo?maxwidth=600&maxheight=300&photoreference=" + results.photos[i].photo_reference + "&key=AIzaSyDGbaz8xBuD2ZAX5SI_IlQ8zYeao7KwTPQ");
+            barImage.attr("src", "https://maps.googleapis.com/maps/api/place/photo?maxwidth=600&maxheight=250&photoreference=" + results.photos[i].photo_reference + "&key=AIzaSyDGbaz8xBuD2ZAX5SI_IlQ8zYeao7KwTPQ");
             imgDiv.append(barImage);
             $(".image").append(imgDiv);
 
@@ -125,9 +127,9 @@ $(document).ready(function() {
             let revDiv = $("<div>");
             revDiv.addClass("reviews text-white d-flex flex-wrap");
             let list = $("<ul>")
-            list.addClass("review-list border border-white list-group")
+            list.addClass("review-list list-group")
             let rName = $("<li>");
-            rName.addClass("list-item");
+            rName.addClass("name-list-item");
             rName.text(results.reviews[i].author_name);
             list.append(rName);
             let rating = $("<li>");
@@ -135,11 +137,11 @@ $(document).ready(function() {
             rating.text("Rating: " + results.reviews[i].rating);
             list.append(rating);
             let review = $("<li>");
-            review.addClass("list-item");
+            review.addClass("review-list-item");
             review.text(results.reviews[i].text);
             list.append(review);
             let time = $("<li>");
-            time.addClass("list-item");
+            time.addClass("time-list-item");
             time.text(results.reviews[i].relative_time_description);
             list.append(time);
             revDiv.append(list);
@@ -147,7 +149,18 @@ $(document).ready(function() {
         }
     }
 
+    // function backToBars() {
+    //     $(".back-bars").on("click", function() {
+    //         console.log("alkdfj");
+    //         $("#display-details").hide();
+    //         $("#displayImageMap").hide();
+    //         $("#display-reviews").hide();
+    //         showResult(data.results);
+    //     });
+    // }
+
     displayPub();
 
     $(document).on("click", ".bars", barInfo);
+
 });
