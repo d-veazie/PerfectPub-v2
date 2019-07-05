@@ -1,7 +1,6 @@
 body {
     background-image: url(https://images.unsplash.com/photo-1509807995916-c332365e2d9e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1271&q=80);
 }
-
 .p0 {
     font-size: 65px;
     text-align: center;
@@ -12,7 +11,6 @@ body {
     color: yellow;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
-
 #header-container {
     text-align: center;
 }
@@ -59,22 +57,22 @@ body {
     width: 100%;
   }
 } */
-
 div.box {
     box-sizing: border-box;
     width: 50%;
     border: 5px solid red;
     float: left;
-}
-
+}  
 .form-control-input {
     width: 1000px;
     height: 40px;
     border-radius: 8px;
     padding: 10px;
     margin-left: 65px;
-}
+    box-shadow: 0px 0px 2px 2px black;
 
+
+}
 .button-submit {
     margin-left: 20px;
     font-family: 'IM Fell Great Primer SC', serif;
@@ -85,18 +83,16 @@ div.box {
     border-color: white;
     background-image: url(https://images.unsplash.com/photo-1509807995916-c332365e2d9e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1271&q=80);
 }
-
+]
 #submit:hover {
     box-shadow: 0 6px 12px 0 grey, 0 3px 10px 0 grey;
     color: yellow;
 }
-
 #display-bars {
     color: white;
     font-weight: bolder;
     margin-bottom: 20px;
 }
-
 .bars {
     text-align: center;
     width: 400px;
@@ -125,6 +121,29 @@ div.box {
 a {
     font-size: 20px;
 }
+.p0 {
+    animation: pulse 5s infinite;
+}
+  
+@keyframes pulse {
+    0% {
+      color: yellow;
+    }
+    50% {
+      color: #FF4136;
+    }
+    100% {
+        color: yellow;
+      }
+}
+h1 {
+    text-decoration: underline white;
+}
+=======
+
+a {
+    font-size: 20px;
+}
 
 .p0 {
     animation: pulse 5s infinite;
@@ -146,6 +165,7 @@ h1 {
     text-decoration: underline white;
 }
 
+
 .details {
     background-color: black;
     padding: 20px;
@@ -153,6 +173,18 @@ h1 {
     border-radius: 8px;
     border-style: solid;
 }
+
+.hours {
+    padding-top: 5px;
+    border: 1px solid black!important;
+  }
+.container {
+    background-color: black;
+    margin-bottom: 10px;
+  }
+#map {
+    height: 275px;
+
 
 .hours {
     padding-top: 5px;
@@ -166,8 +198,86 @@ h1 {
 
 #map {
     height: 200px;
+
     /* The height is 400 pixels */
     width: 600px;
     background-color: grey;
     /* The width is the width of the web page */
+
+    margin: auto;
+    margin-left: 20px;
+    border-style: solid white;
+    border: groove black 9px;
+    margin-bottom: 15px;
+    
+}
+.reviews {
+    background-color: black;
+    width: 1000px;
+    border: white;
+    margin: auto;
+    margin-bottom: 15px;
+    border-radius: 8px;
+}
+.list-item {
+    padding: 8px;
+    list-style: none;
+}
+#list-item-main {
+    text-decoration: underline white;
+    font-size: 18px;
+    color: white;
+    border-radius: 8px;
+    background-image: url(https://images.unsplash.com/photo-1492892132812-a00a8b245c45?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80); 
+    font-family: 'Libre Baskerville', serif;
+}
+#list-item-time {
+    font-size: 12px;
+    padding-left: 0px;
+    text-decoration: overline white;
+    font-family: 'Libre Baskerville', serif;
+    padding-top: 2px;
+}
+#list-item-rating {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+#list-item-review {
+    /* font-family: 'Noto Sans KR', sans-serif; */
+    font-family: 'Libre Baskerville', serif;
+    font-size: 14px;
+    padding-bottom: 5px;
+}
+
+#active-image {
+    position: absolute;
+    margin-bottom: 20px;
+}
+
+.picture-div {
+    background-color: black;
+    padding: 20px;
+    width: 600px;
+    height: 507px;
+    border-radius: 8px;
+    border-style: solid white;
+    margin-left: 15px;
+}
+.d-block {
+    margin-left: 175px;
+    height: 290px;
+    width: 290px;
+    margin-bottom: 15px;
+    /* box-shadow: 0px 0px 4px 4px white; */
+    border: groove black 9px;
+    
+}
+.review-list {
+    margin-bottom: 20px;
+    /* border-style: solid white; */
+}
+h1 {
+    font-family: 'Lobster', cursive;
+    font-size: 55px;
 }
