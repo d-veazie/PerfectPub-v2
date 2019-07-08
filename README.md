@@ -10,3 +10,5 @@ API's to be used.
 Google Places Api
 Google Maps Api
 Google Details Api
+
+Link to deployed site - https://d-veazie.github.io/PerfectPub-v2/page1.html
